@@ -1,0 +1,105 @@
+# House Prices Machine Learning Assessment
+
+## 1. Project Overview
+
+This project predicts residential house sale prices using machine learning for the Kaggle House Prices - Advanced Regression Techniques competition.
+
+## 2. Problem Statement
+
+The objective is to estimate the final sale price of a house using its property characteristics.
+
+**Target variable:** `SalePrice`
+
+**Evaluation metric:** Root Mean Squared Error on the logarithm of predicted and actual house prices.
+
+## 3. Dataset
+
+The project uses the Kaggle competition dataset.
+
+- `data/train.csv`: Training data with the target variable.
+- `data/test.csv`: Test data for final predictions.
+
+## 4. Project Workflow
+
+1. Exploratory Data Analysis (EDA)
+2. Data Preprocessing
+3. Feature Engineering
+4. Baseline Model
+5. Model Experimentation
+6. Validation
+7. Error Analysis
+8. Final Model Training
+9. Kaggle Submission
+
+## 5. Feature Engineering
+
+The project creates additional features, including:
+
+- `TotalSF`
+- `TotalBathrooms`
+- `TotalPorchSF`
+- `HouseAge`
+- `RemodAge`
+- `OverallQual_SF`
+
+## 6. Models Evaluated
+
+Four models were compared using an 80/20 train-validation split with `random_state=42`.
+
+| Model | Validation Log-RMSE |
+|---|---:|
+| Ridge Regression | 0.134697 |
+| Gradient Boosting | 0.140550 |
+| Random Forest | 0.145227 |
+| Dummy Baseline | 0.433244 |
+
+Ridge Regression achieved the lowest validation error among the evaluated models and was selected for the final submission.
+
+## 7. Kaggle Result
+
+- **Final model:** Ridge Regression
+- **Recorded Kaggle submission score:** 0.12800
+- **Prediction file:** `outputs/submission.csv`
+
+## 8. Repository Structure
+
+```text
+house-prices-ml-assessment/
+├── README.md
+├── requirements.txt
+├── data/
+│   ├── train.csv
+│   └── test.csv
+├── notebooks/
+│   ├── 01_eda.ipynb
+│   ├── 02_preprocessing.ipynb
+│   ├── 03_model_experiments.ipynb
+│   └── 04_final_model.ipynb
+├── src/
+│   ├── data_preprocessing.py
+│   ├── feature_engineering.py
+│   ├── models.py
+│   └── evaluation.py
+├── outputs/
+│   ├── figures/
+│   ├── model_results.csv
+│   └── submission.csv
+└── reports/
+    └── assessment_report.pdf
+```
+
+## 9. Requirements
+
+Install the required Python packages using:
+
+```bash
+pip install -r requirements.txt
+```
+
+## 10. Reproducibility
+
+The notebooks document the EDA, preprocessing, model experiments and final prediction workflow. Run them in the listed order with the competition dataset attached.
+
+## 11. Conclusion
+
+This project demonstrates data exploration, feature engineering, preprocessing, model comparison, validation and final prediction generation for a house-price regression problem.
