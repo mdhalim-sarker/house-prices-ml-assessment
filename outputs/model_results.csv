@@ -1,0 +1,5 @@
+Model,Validation_Log_RMSE
+Ridge Regression,0.134697
+Gradient Boosting,0.140550
+Random Forest,0.145227
+Dummy Baseline,0.433244
